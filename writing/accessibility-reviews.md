@@ -14,7 +14,7 @@ There's a pattern I've seen repeat across organisations of different sizes, with
 
 This is treated as an execution problem — not enough time, not enough buy-in, not enough dedicated resource. But the execution problem is downstream of something else: accessibility was framed as a review, which means it was framed as a filter. Filters happen at the end. And things that happen at the end are, by definition, easy to defer.
 
-{% pullquote %}An accessibility review at the end of a project is a quality check on decisions that were already made without accessibility in mind.{% endpullquote %}
+<div class="pull-quote"><p>An accessibility review at the end of a project is a quality check on decisions that were already made without accessibility in mind.</p></div>
 
 The issues that surface in late-stage reviews are rarely novel. They're the predictable consequences of decisions made much earlier — colour choices made in a mood board, interaction patterns chosen for aesthetic reasons, a component library adopted without checking its ARIA support. By the time the review happens, those decisions are load-bearing. Changing them is expensive. So they don't get changed.
 
