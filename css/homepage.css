@@ -1,0 +1,159 @@
+/*
+ * portfolio-homepage.css
+ * Page-specific styles for the homepage.
+ * Depends on: portfolio-shared.css (load first)
+ */
+
+/* ── Header ── */
+header { margin-bottom: 72px; }
+
+.name {
+  font-family: var(--serif);
+  font-size: clamp(2.4rem, 5vw, 3.2rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  margin-bottom: 28px;
+}
+.name em { font-style: italic; color: var(--muted); }
+
+.bio { font-size: 1rem; line-height: 1.75; color: var(--ink); max-width: 520px; }
+.bio p + p { margin-top: 1em; }
+.bio a { color: inherit; text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 3px; transition: text-decoration-color 0.2s; }
+.bio a:hover { text-decoration-color: var(--ink); }
+
+/* ── Case studies ── */
+.case-studies { margin-bottom: 72px; }
+
+.case-study {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--rule);
+  text-decoration: none;
+  color: var(--ink);
+  transition: opacity 0.2s ease;
+}
+.case-study:hover { opacity: 0.75; }
+.case-study:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 2px; }
+
+.cs-main { flex: 1; }
+
+.cs-title { font-family: var(--serif); font-size: clamp(1.05rem, 2.2vw, 1.2rem); font-weight: 400; line-height: 1.35; letter-spacing: -0.01em; }
+.cs-title em { font-style: italic; }
+.cs-descriptor { font-family: var(--mono); font-size: 0.68rem; font-weight: 300; color: var(--muted); margin-top: 6px; line-height: 1.5; letter-spacing: 0.02em; }
+
+.cs-external { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+.cs-meta { font-family: var(--mono); font-size: 0.68rem; font-weight: 300; color: var(--muted); white-space: nowrap; letter-spacing: 0.04em; }
+
+.cs-icon {
+  width: 11px;
+  height: 11px;
+  color: var(--rule);
+  flex-shrink: 0;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.case-study:hover .cs-icon { color: var(--accent); transform: translateX(1px); }
+
+/* ── Side projects ── */
+.side-projects { margin-bottom: 56px; }
+
+.project {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--rule);
+  text-decoration: none;
+  color: var(--ink);
+  transition: opacity 0.2s ease;
+}
+.project:hover { opacity: 0.75; }
+.project:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 2px; }
+
+.project-title { font-family: var(--sans); font-size: 0.92rem; font-weight: 300; line-height: 1.4; color: var(--ink); flex: 1; }
+.project-external { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+.project-tag { font-family: var(--mono); font-size: 0.62rem; font-weight: 300; color: var(--muted); white-space: nowrap; letter-spacing: 0.04em; }
+
+.project-icon { width: 11px; height: 11px; color: var(--rule); flex-shrink: 0; transition: color 0.2s ease; }
+.project:hover .project-icon { color: var(--accent); }
+
+/* ── Writing ── */
+.writing { margin-bottom: 72px; }
+.writing-list { list-style: none; }
+.writing-item { border-bottom: 1px solid var(--rule); }
+
+.writing-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding: 10px 0;
+  text-decoration: none;
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 300;
+  line-height: 1.5;
+  transition: opacity 0.2s ease;
+}
+.writing-link span:first-child { flex: 1; }
+.writing-link:hover { opacity: 0.75; }
+.writing-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+.writing-meta { display: flex; align-items: center; gap: 10px; flex-shrink: 0; align-self: flex-start; }
+.writing-time { font-family: var(--mono); font-size: 0.62rem; font-weight: 300; color: var(--muted); white-space: nowrap; letter-spacing: 0.04em; }
+.writing-icon { width: 11px; height: 11px; color: var(--rule); flex-shrink: 0; transition: color 0.2s ease; }
+.writing-link:hover .writing-icon { color: var(--accent); }
+
+/* ── Responsive overrides ── */
+@media (max-width: 600px) {
+  .cs-meta { margin-top: 4px; }
+  .writing-link { flex-direction: column; gap: 2px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .case-study,
+  .project,
+  .writing-link,
+  .bio a { transition: none; }
+}
+
+/* ── Footer ── */
+footer {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+footer a {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+footer a:hover { color: var(--ink); }
+footer a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+footer .separator {
+  width: 3px;
+  height: 3px;
+  background: var(--rule);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  footer a { transition: none; }
+}

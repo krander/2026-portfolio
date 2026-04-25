@@ -1,0 +1,121 @@
+---
+title: "Portfolio — Your Name"
+description: "Portfolio of a Principal Designer working on systems, strategy, and the coordination problems that live between teams. Case studies, side projects, and writing."
+---
+{% extends "layouts/base.njk" %}
+
+{% block styles %}
+  <link rel="stylesheet" href="/css/homepage.css" />
+{% endblock %}
+
+{% block body %}
+
+  {# SVG sprite — referenced via <use href="#..."> throughout the page #}
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <symbol id="icon-arrow-right" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M2 6h8M6 2l4 4-4 4"/>
+    </symbol>
+    <symbol id="icon-arrow-external" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M2 10L10 2M5 2h5v5"/>
+    </symbol>
+  </svg>
+
+  <main class="page">
+
+    <header>
+      <h1 class="name">Your Name<br /><em>Principal Designer</em></h1>
+      <div class="bio">
+        <p>I work on the hard coordination problems — the ones that live between teams, between product phases, between what's designed and what ships. Most of my work is systems and strategy, with enough craft to make the thinking tangible.</p>
+        <p>Currently at <a href="#">Company</a>. Previously <a href="#">Company</a>, <a href="#">Company</a>.</p>
+      </div>
+    </header>
+
+    <section class="case-studies" id="work">
+      <div class="section-label">Work</div>
+
+      {% for item in collections.work %}
+      <a class="case-study" href="{{ item.url }}">
+        <div class="cs-main">
+          <div class="cs-title">{{ item.data.title | safe }}</div>
+          <div class="cs-descriptor">{{ item.data.category }} · {{ item.data.context }} · {{ item.date | dateDisplay }}</div>
+        </div>
+        <div class="cs-external">
+          <span class="cs-meta">{{ item.data.readtime }}</span>
+          <svg class="cs-icon" aria-hidden="true"><use href="#icon-arrow-right"/></svg>
+        </div>
+      </a>
+      {% endfor %}
+    </section>
+
+    <section class="side-projects">
+      <div class="section-label">Side projects</div>
+
+      <a class="project" href="#" target="_blank" rel="noopener noreferrer">
+        <div class="project-title">Accessibility audit toolkit for small product teams</div>
+        <div class="project-external">
+          <span class="project-tag">2024</span>
+          <svg class="project-icon" aria-hidden="true"><use href="#icon-arrow-external"/></svg>
+        </div>
+        <span class="visually-hidden">(opens in a new tab)</span>
+      </a>
+
+      <a class="project" href="#" target="_blank" rel="noopener noreferrer">
+        <div class="project-title">Journey map critique cards</div>
+        <div class="project-external">
+          <span class="project-tag">2023</span>
+          <svg class="project-icon" aria-hidden="true"><use href="#icon-arrow-external"/></svg>
+        </div>
+        <span class="visually-hidden">(opens in a new tab)</span>
+      </a>
+
+      <a class="project" href="#" target="_blank" rel="noopener noreferrer">
+        <div class="project-title">Design decision log template</div>
+        <div class="project-external">
+          <span class="project-tag">2022</span>
+          <svg class="project-icon" aria-hidden="true"><use href="#icon-arrow-external"/></svg>
+        </div>
+        <span class="visually-hidden">(opens in a new tab)</span>
+      </a>
+    </section>
+
+    <section class="writing" id="writing">
+      <div class="section-label">Writing</div>
+      <ul class="writing-list">
+        {% for post in collections.writing %}
+        <li class="writing-item">
+          <a class="writing-link" href="{{ post.url }}">
+            <span>{{ post.data.title }}</span>
+            <div class="writing-meta">
+              <span class="writing-time">{{ post.data.readtime }}</span>
+              <svg class="writing-icon" aria-hidden="true"><use href="#icon-arrow-right"/></svg>
+            </div>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </section>
+
+    <footer>
+      <a href="#">LinkedIn</a>
+      <div class="separator"></div>
+      <a href="#">Read.cv</a>
+      <div class="separator"></div>
+      <a href="#">Email</a>
+      <div class="separator"></div>
+      <a href="/accessibility/">Accessibility</a>
+      <div class="year-stamp">Portfolio · 2025</div>
+    </footer>
+
+    <nav class="a11y-webring-club" aria-labelledby="a11y-webring-club">
+      <h2 id="a11y-webring-club">a11y-webring.club</h2>
+      <p>This site is a member of the <a rel="external" href="https://a11y-webring.club/">a11y-webring.club</a>.</p>
+      <ul>
+        <li><a rel="external" referrerpolicy="strict-origin" href="https://a11y-webring.club/prev">Previous website</a></li>
+        <li><a rel="external" referrerpolicy="strict-origin" href="https://a11y-webring.club/random">Random website</a></li>
+        <li><a rel="external" referrerpolicy="strict-origin" href="https://a11y-webring.club/next">Next website</a></li>
+      </ul>
+    </nav>
+
+  </main>
+
+{% endblock %}

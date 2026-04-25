@@ -1,0 +1,47 @@
+{#- _includes/layouts/casestudy.njk
+    Case study layout — extends base.
+    Front matter expects: title, description, date,
+    category, context, readtime, overview -#}
+{% extends "layouts/base.njk" %}
+
+{% block styles %}
+  <link rel="stylesheet" href="/css/casestudy.css" />
+{% endblock %}
+
+{% block body %}
+  <main class="page">
+
+    {% include "components/nav.njk" %}
+
+    <header class="article-header">
+      <div class="article-meta">
+        <span>{{ category }}</span>
+        <span class="separator">·</span>
+        <span>{{ context }}</span>
+        <span class="separator">·</span>
+        <span>{{ date | dateDisplay }}</span>
+        <span class="separator">·</span>
+        <span>{{ readtime }} read</span>
+      </div>
+      <h1>{{ title | safe }}</h1>
+      <p class="overview">{{ overview }}</p>
+    </header>
+
+    <article class="article-body">
+      {{ content | safe }}
+    </article>
+
+    <div class="section-divider"></div>
+
+    {# Next case study — set nextTitle and nextUrl in front matter #}
+    {% if nextTitle %}
+    <div class="next-cs">
+      <div class="next-label">Next</div>
+      <a class="next-link" href="{{ nextUrl }}">{{ nextTitle | safe }}</a>
+    </div>
+    {% endif %}
+
+    {% include "components/footer.njk" %}
+
+  </main>
+{% endblock %}

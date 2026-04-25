@@ -1,0 +1,73 @@
+---
+title: "Aligning <em>three teams</em> around a single journey"
+description: "Three teams, three definitions of what onboarding was for. How structured listening and lightweight research made a coherent scope decision possible — and what shipped."
+date: 2024-01-01
+category: Onboarding
+context: B2B SaaS
+readtime: 6 min
+overview: "When a B2B SaaS company set out to redesign its onboarding flow, the surface problem was a high drop-off rate. The real problem was that three teams — product, customer success, and engineering — each had a different mental model of what onboarding was for. This case study is about the work that happened before any pixels moved: mapping those models, finding the fracture lines, and building enough shared understanding to make a coherent decision about scope. We shipped a narrower solution than anyone originally wanted. It was the right call."
+nextTitle: "Choosing <em>clarity over flexibility</em> in a high-stakes redesign"
+nextUrl: /work/clarity-over-flexibility/
+---
+
+<h2>The problem</h2>
+<p>
+  Drop-off during onboarding was sitting at 61% — high enough to be a business problem, ambiguous enough that everyone had a different theory about why. Product attributed it to UI complexity. Customer success pointed to a mismatch between what the product did and what sales had promised. Engineering flagged three separate onboarding flows that had accumulated over two years of incremental changes, none of which were fully deprecated.
+</p>
+<p>
+  The instinct was to redesign the flow. But before committing to that, it was worth asking whether a redesign would actually address the root cause — or whether it would paper over a coordination problem with a UX solution.
+</p>
+
+{% artifact "Artifact — Current-state journey map", "Current-state journey map showing three divergent onboarding paths and where each team's ownership ended." %}
+
+<h2>The process</h2>
+<p>
+  The first two weeks weren't design work. They were structured listening: separate sessions with each team to understand what they thought onboarding was trying to accomplish, and for whom. The answers didn't overlap as much as expected.
+</p>
+<p>
+  Product defined success as a user completing the setup checklist. Customer success defined it as a user reaching their first meaningful outcome — a definition that sometimes took weeks, not minutes. Engineering's implicit model was simpler: onboarding ended when the user authenticated and landed on the dashboard.
+</p>
+
+{% pullquote %}Three teams, three definitions of done. Any redesign built on one of those definitions would have failed on the other two.{% endpullquote %}
+
+<p>
+  A lightweight research sprint — session recordings, five user interviews, a review of support tickets tagged "getting started" — gave us signal to bring into those conversations. The goal wasn't to prove anyone wrong. It was to give the teams a shared object to react to, rather than continuing to talk past each other.
+</p>
+
+{% artifact "Artifact — Team mental model comparison", "Side-by-side comparison of how each team defined onboarding success, surfaced in structured interviews." %}
+
+<h2>The decision</h2>
+<p>
+  The temptation was to design an onboarding system that satisfied all three definitions simultaneously. That would have been a mistake. It would have produced a flow that was long enough to reach "first meaningful outcome," complex enough to surface every setup option, and instrumented to satisfy engineering's auth-completion metric — while serving none of those goals particularly well.
+</p>
+
+{% decisionbox %}We deprioritised flexibility — the ability for users to configure their workspace during onboarding — because support data showed that users who tried to configure too early were more likely to abandon than those who were guided to a quick first win. Flexibility became a post-onboarding concern.{% enddecisionbox %}
+
+<p>
+  This required a harder conversation with the product team, who had strong opinions about surfacing configuration options early. The support data made that conversation possible without it becoming a design opinion vs. product opinion standoff.
+</p>
+
+<h2>The solution</h2>
+<p>
+  What shipped was a linear, opinionated onboarding flow — six steps, no branching, no optional configuration. It was designed around a single definition of success: the user completes one meaningful action in their first session. Everything else was deferred.
+</p>
+<p>
+  The three legacy flows were consolidated into one. Customer success got instrumentation at the "first meaningful action" milestone rather than checklist completion. Engineering deprecated the redundant paths over the following sprint.
+</p>
+
+{% artifact "Artifact — Final onboarding flow", "The shipped six-step flow. Linear, no branching. Completion rate improved from 39% to 67% over the following eight weeks." %}
+
+<p>
+  Completion rate moved from 39% to 67% over eight weeks. More usefully: customer success reported fewer "I don't know where to start" support conversations, which had been the qualitative signal we were tracking alongside the metric.
+</p>
+
+<h2>Reflection</h2>
+<p>
+  The work that mattered most happened before the design did. If we had started with the UI — which was the original brief — we would have built something better-looking that didn't address the actual problem. The alignment work upstream felt slow at the time. In retrospect it was the thing that made the downstream decision defensible.
+</p>
+<p>
+  What I'd do differently: surface the "what does success mean?" question earlier in discovery, not as a workshop exercise but as a standing question in project kickoffs. It tends to reveal more than any journey map produced after the fact.
+</p>
+<p>
+  One thing that wasn't resolved: the gap between CS's definition of success (first meaningful outcome) and what the product currently measures (checklist completion) still exists at the metric level. It was flagged, noted in the project doc, and is sitting in a backlog somewhere. Not every fracture line gets fixed in a single project.
+</p>

@@ -1,0 +1,53 @@
+{#- _includes/layouts/writing.njk
+    Writing layout — extends base.
+    Front matter expects: title, description, date, readtime,
+    standfirst, prevTitle, prevUrl, nextTitle, nextUrl -#}
+{% extends "layouts/base.njk" %}
+
+{% block styles %}
+  <link rel="stylesheet" href="/css/writing.css" />
+{% endblock %}
+
+{% block body %}
+  <main class="page">
+
+    {% include "components/nav-writing.njk" %}
+
+    <header class="article-header">
+      <div class="article-dateline">
+        <span class="article-date">{{ date | dateDisplay }}</span>
+        <div class="sep"></div>
+        <span class="article-readtime">{{ readtime }} read</span>
+      </div>
+      <h1>{{ title }}</h1>
+      <p class="standfirst">{{ standfirst }}</p>
+    </header>
+
+    <article class="article-body">
+      {{ content | safe }}
+    </article>
+
+    <div class="section-divider"></div>
+
+    {# Prev/next article nav — set in front matter #}
+    {% if prevTitle or nextTitle %}
+    <div class="article-nav">
+      {% if prevTitle %}
+      <div class="article-nav-item prev">
+        <span class="article-nav-label">Previous</span>
+        <a class="article-nav-link" href="{{ prevUrl }}">{{ prevTitle }}</a>
+      </div>
+      {% endif %}
+      {% if nextTitle %}
+      <div class="article-nav-item next">
+        <span class="article-nav-label">Next</span>
+        <a class="article-nav-link" href="{{ nextUrl }}">{{ nextTitle }}</a>
+      </div>
+      {% endif %}
+    </div>
+    {% endif %}
+
+    {% include "components/footer.njk" %}
+
+  </main>
+{% endblock %}
