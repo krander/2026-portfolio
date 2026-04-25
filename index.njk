@@ -5,7 +5,7 @@ description: "Portfolio of a Principal Designer working on systems, strategy, an
 {% extends "layouts/base.njk" %}
 
 {% block styles %}
-  <link rel="stylesheet" href="/css/homepage.css" />
+  <link rel="stylesheet" href="{{ '/css/homepage.css' | url }}" />
 {% endblock %}
 
 {% block body %}
@@ -34,7 +34,7 @@ description: "Portfolio of a Principal Designer working on systems, strategy, an
       <div class="section-label">Work</div>
 
       {% for item in collections.work %}
-      <a class="case-study" href="{{ item.url }}">
+      <a class="case-study" href="{{ item.url | url }}">
         <div class="cs-main">
           <div class="cs-title">{{ item.data.title | safe }}</div>
           <div class="cs-descriptor">{{ item.data.category }} · {{ item.data.context }} · {{ item.date | dateDisplay }}</div>
@@ -83,7 +83,7 @@ description: "Portfolio of a Principal Designer working on systems, strategy, an
       <ul class="writing-list">
         {% for post in collections.writing %}
         <li class="writing-item">
-          <a class="writing-link" href="{{ post.url }}">
+          <a class="writing-link" href="{{ post.url | url }}">
             <span>{{ post.data.title }}</span>
             <div class="writing-meta">
               <span class="writing-time">{{ post.data.readtime }}</span>
@@ -102,7 +102,7 @@ description: "Portfolio of a Principal Designer working on systems, strategy, an
       <div class="separator"></div>
       <a href="#">Email</a>
       <div class="separator"></div>
-      <a href="/accessibility/">Accessibility</a>
+      <a href="{{ '/accessibility/' | url }}">Accessibility</a>
       <div class="year-stamp">Portfolio · 2025</div>
     </footer>
 

@@ -65,7 +65,7 @@ module.exports = function (eleventyConfig) {
 
   // ── Config ───────────────────────────────────────────────
   return {
-    // Use Nunjucks for HTML and Nunjucks template files
+    pathPrefix: "/2026-portfolio/",
     markdownTemplateEngine: "njk",
     htmlTemplateEngine: "njk",
 
