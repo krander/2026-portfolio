@@ -1,0 +1,61 @@
+---
+title: "Making the pain diagram work for every patient"
+description: "A five-year-old body diagram had no keyboard or screen reader support. We fixed it without sacrificing clinical utility."
+date: 2024-01-01
+category: Accessibility
+context: B2B2C healthcare SaaS
+readtime: 4 min
+overview: "Three internal accessibility sites existed because three business units couldn't agree on a shared approach. The consolidation project was the first time anyone had gotten organisational buy-in to fix that. The plan was phased: validate the IA through research, link out to existing sites while we built toward full consolidation. That changed when the developer brought all three sites' content in before the IA was ready. We redesigned mid-project, extrapolated from the research we had, and shipped."
+nextTitle: "Transparency at a <em>cost</em>"
+nextUrl: /work/transparency-at-a-cost/
+---
+
+<h2>Problem</h2>
+<p>
+The diagram was built to capture something genuinely useful, exact pain location, and it did that well for patients with fine motor control and no assistive technology needs. For everyone else, it was a complete barrier. There was no way to submit a response, no fallback, no skip. Patients who couldn't engage with the image had no path forward in the form.
+</p>
+
+</p>
+I discovered this during a broader accessibility audit of our patient-facing products. It was the first major audit I'd run since joining. The organisation hadn't previously had anyone systematically reviewing for accessibility and the registration form felt like the right place to start. When I raised it, our legal team confirmed the risk. But the issue was already on my radar before that conversation.
+</p>
+
+<h2>Process</h2>
+<p>
+I started with the audit finding, then ran usability testing through UserZoom with keyboard-only users navigating a prototype. The testing confirmed what the audit suggested: without tab stops or focus management, users had no way to locate themselves in the interaction, let alone complete it.
+</p>
+
+<p>
+I explored two approaches. The first was a dropdown selector, a complete departure from the diagram entirely. The second kept the visual diagram for mouse and touch users but layered in keyboard accessibility: tab stops, visible focus indicators, and screen reader support with defined body region labels.
+</p>
+
+<p>
+My team (consisting of me, a product manager, and a engineer) chose the second approach. A dropdown would have resolved the accessibility issue, but it would have created a meaningfully different experience depending on how a patient accessed the form.
+</p>
+
+<p>
+The harder question was what a keyboard-navigable diagram could actually capture. A finger tap or mouse click can pinpoint a location precisely. A keyboard can't. We'd need to work at the level of body regions, not coordinates.
+</p>
+
+<p>
+Our clinical specialists raised a reasonable concern: without precise location data, providers might need to ask follow-up questions in the room. After working through it together, they concluded that clarifying conversations would often happen regardless and that structured pain location data was better than none. I worked with this team to define the body region taxonomy together, with patient-friendly language for the alternative text that they helped validate.
+</p>
+
+{% decisionbox %}We decided against the dropdown because body regions (with the help of our clinical friends and their input) was genuinely an equivalent experience, not just technically compliant.{% enddecisionbox %}
+
+<h2>Solution</h2>
+<p>
+The updated pain scale section with the improved body diagram shipped with full keyboard navigation, visible focus states, and screen reader support using the body region labels we'd developed with the clinical team. Mouse and touch users saw no change. Keyboard and screen reader users had a complete path through the section for the first time.
+</p>
+
+<p>
+Drop-off on this page fell by 7%. Time on page increased by an average of 27 seconds, which we expected: navigating by keyboard or screen reader takes longer than a tap. That's not a failure signal; it's the interaction actually working.
+</p>
+
+<h2>Reflection</h2>
+<p>
+The thing I'd sit with longer next time is the precision trade-off. We landed well: body regions are clinically useful, the language is clear, clinical specialists signed off. However, the question of what "equivalent" really means in an accessible interaction deserves more time than it often gets. Accessible doesn't need to mean identical. It means considered. Thankfully, we had that conversation. Not every team does.
+</p>
+
+<p>
+The broader context matters too. This fix was possible because accessibility had become a shared organizational concern, not just a design one. Legal's involvement accelerated prioritisation. Clinical's involvement improved the solution. Neither of those partnerships happened automatically... They came from building the case, over time, that accessibility belongs in the product development lifecycle from the start.
+</p>

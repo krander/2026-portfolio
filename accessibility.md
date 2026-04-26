@@ -1,7 +1,7 @@
 ---
-title: "Accessibility statement — Your Name"
+title: "Accessibility statement — Katie Anderson"
 description: "Accessibility statement for this portfolio. What works, what's been tested, known limitations, and how to get in touch if something isn't working for you."
-date: 2025-04-01
+date: 2025-04-24
 readtime: 2 min
 standfirst: "This portfolio aims to be accessible to everyone. This page describes what's been done to support that, what's been tested, any known limitations, and how to reach me if something isn't working."
 layout: writing.njk
