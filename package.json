@@ -1,0 +1,24 @@
+{
+  "name": "ka-portfolio",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krander/2026-portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/krander/2026-portfolio/issues"
+  },
+  "homepage": "https://github.com/krander/2026-portfolio#readme",
+  "description": "",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.5"
+  }
+}

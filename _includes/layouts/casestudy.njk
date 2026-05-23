@@ -1,0 +1,31 @@
+---
+layout: layouts/base.njk
+---
+{% if hero_image %}
+  <img class="cs-hero" src="{{ hero_image }}" alt="{{ hero_image_alt or '' }}">
+{% else %}
+  <div class="cs-hero--placeholder" aria-hidden="true">[ Project banner image ]</div>
+{% endif %}
+
+<header class="cs-header">
+  <p class="cs-header__context">{{ company }}</p>
+  <h1 class="cs-header__title">{{ title }}</h1>
+</header>
+
+<div class="cs-body">
+  {{ content | safe }}
+
+  <nav class="cs-nav" aria-label="Case study navigation">
+    <div>
+      {% if prev_study %}
+        <a href="{{ prev_study.url }}">&larr; {{ prev_study.title }}</a>
+      {% endif %}
+    </div>
+    <a href="/#case-studies">Back to work</a>
+    <div>
+      {% if next_study %}
+        <a href="{{ next_study.url }}">{{ next_study.title }} &rarr;</a>
+      {% endif %}
+    </div>
+  </nav>
+</div>

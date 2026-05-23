@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Rebrand exploration",
+    "description": "A logo system I designed for a fictional outdoor gear brand, just to see where it went.",
+    "image": "",
+    "image_alt": "A set of logo variations for a fictional outdoor gear brand called Summit, using earthy tones and clean geometric shapes.",
+    "url": "#"
+  },
+  {
+    "title": "Type specimen poster",
+    "description": "Playing with editorial layout and variable fonts at 2am.",
+    "image": "",
+    "image_alt": "A type specimen poster showcasing a variable serif font, with large display text and layered color blocks.",
+    "url": "#"
+  },
+  {
+    "title": "Dashboard UI concept",
+    "description": "A density experiment — how much data can you surface without creating chaos?",
+    "image": "",
+    "image_alt": "A UI concept for a data dashboard showing activity metrics, with a dark background and warm accent colors.",
+    "url": "#"
+  }
+]

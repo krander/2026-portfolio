@@ -1,0 +1,56 @@
+---
+layout: layouts/casestudy.njk
+title: Designing for trust in a high-stakes medical context
+description: A from-scratch redesign of a patient portal that had a 60% abandonment rate.
+company: HealthCo — Patient-facing mobile
+prev_study:
+  title: Untangling an onboarding flow nobody could finish
+  url: /case-studies/project-one/
+next_study:
+  title: Making a 10-year-old internal tool usable again
+  url: /case-studies/project-three/
+---
+
+<h2>The Mess</h2>
+
+<p>The existing patient portal had been built in 2016, updated minimally since, and was functionally unusable on mobile — where 74% of users actually accessed it. Patients were abandoning before viewing their own test results. The support team was fielding 200+ calls a week from people who couldn't figure out how to do basic tasks.</p>
+
+<p>The clinical team had opinions about what should change. Legal had opinions. Compliance had opinions. And somewhere in the middle were actual patients — people dealing with real health anxiety — who hadn't been asked anything.</p>
+
+<h2>Where I Fit In</h2>
+
+<p>I was the sole designer on a cross-functional team: one PM, two engineers, a clinical informatics specialist, and a compliance lead. I owned research, IA, and all design deliverables. The clinical informatics lead was invaluable — she understood the data model and caught three instances where my proposed designs would have violated clinical communication standards I didn't know existed.</p>
+
+<blockquote class="pull-quote" role="note">
+  <p>"You can't design for trust by making things look trustworthy. You design for trust by removing every moment where the system makes patients feel stupid or scared."</p>
+</blockquote>
+
+<h2>How I Untangled It</h2>
+
+<p>I interviewed 12 patients across three user segments: people managing chronic conditions (high-frequency users), people who received a new diagnosis during the study period (high-stakes users), and people who had tried and failed to use the portal at least once (lapsed users). The lapsed user interviews were the most useful — failure states are always more revealing than success states.</p>
+
+<div class="callout">
+  <p class="callout__label">Research finding</p>
+  <p>The most common failure point wasn't a confusing UI — it was jargon. Lab results were displayed with clinical terminology and reference ranges that meant nothing to non-clinicians. Patients didn't know if their numbers were good or bad, and the portal gave them no way to find out without calling the office.</p>
+</div>
+
+<p>I also conducted a heuristic evaluation of the existing portal against Nielsen's 10 usability heuristics and mapped every abandonment point from the analytics data to specific screens. The two highest-abandonment screens were the results summary (too dense, no plain-language explanation) and the appointment booking flow (5 steps, 3 of which were redundant).</p>
+
+<h2>What We Made</h2>
+
+<p>The redesign centered on three principles we derived directly from research: plain language first, progressive disclosure, and never leave a patient with a number and no context.</p>
+
+<figure>
+  <div style="background: var(--color-bg-alt); height: 360px; display: flex; align-items: center; justify-content: center; border-radius: 8px; color: var(--color-text-muted);">[ Patient portal redesign screens ]</div>
+  <figcaption>Lab results redesigned with plain-language summaries, visual status indicators, and a contextual explanation panel — no clinical jargon on the primary view.</figcaption>
+</figure>
+
+<p>Lab results now show a plain-language summary ("Your cholesterol is slightly elevated") before the clinical value. The reference range is there for patients who want it, but it's not the first thing they see. Appointment booking went from 5 steps to 2.</p>
+
+<h2>Did It Work?</h2>
+
+<p>Support call volume dropped 47% in the first six weeks post-launch. Portal abandonment dropped from 60% to 22%. Patient satisfaction scores (measured via post-visit survey) increased from 3.1 to 4.4 out of 5.</p>
+
+<p>The number I'm most proud of: 91% of patients in our follow-up survey said they felt they understood their lab results after the redesign. That number was 34% before.</p>
+
+<p>What I'd do differently: I'd push harder for ongoing access to patient feedback post-launch. We had great launch metrics, but I lost visibility into what was happening six months out. A lightweight feedback mechanism built into the portal itself would have helped.</p>

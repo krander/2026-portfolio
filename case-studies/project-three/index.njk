@@ -1,0 +1,56 @@
+---
+layout: layouts/casestudy.njk
+title: Making a 10-year-old internal tool usable again
+description: Embedded research and a phased redesign for a tool 200 people used every day but hated.
+company: Internal tools — Ops team
+prev_study:
+  title: Designing for trust in a high-stakes medical context
+  url: /case-studies/project-two/
+next_study:
+  title: Untangling an onboarding flow nobody could finish
+  url: /case-studies/project-one/
+---
+
+<h2>The Mess</h2>
+
+<p>The ops team had been using the same internal workflow tool since 2014. It worked — technically. It processed orders, tracked inventory, handled exception queues. But it also had 47 unlabeled icon buttons, a search that only worked if you knew the exact SKU format, and a notification system that fired so often people had turned it off entirely and were missing critical alerts.</p>
+
+<p>The IT team had tried to get a redesign funded three times. Three times it had been deprioritized. The fourth time, they got a budget — but only for a "light refresh." I was brought in to scope what was actually possible.</p>
+
+<h2>Where I Fit In</h2>
+
+<p>I was embedded with the ops team for four weeks before doing any design work. My role was researcher first, designer second. I sat next to people while they worked. I watched the workarounds. I catalogued every time someone opened a second tool, a spreadsheet, or a sticky note to compensate for what the system didn't do.</p>
+
+<blockquote class="pull-quote" role="note">
+  <p>"Four weeks of watching people use a tool tells you more than four months of interviewing them about it."</p>
+</blockquote>
+
+<h2>How I Untangled It</h2>
+
+<p>The embedded research phase produced a prioritized list of 31 pain points, ranked by frequency and severity. I used a combination of observation notes, a short diary study (five participants, one week), and a task analysis of the six core workflows that accounted for 80% of daily usage.</p>
+
+<div class="callout">
+  <p class="callout__label">Scope decision</p>
+  <p>The "light refresh" budget couldn't touch the underlying architecture. That constraint was actually useful — it forced us to focus on the interface layer and the information architecture rather than trying to rebuild something that would have taken 18 months.</p>
+</div>
+
+<p>I presented a phased approach to leadership: Phase 1 addressed the 5 highest-severity issues (notification system, icon labeling, search) with no architectural changes. Phase 2 addressed the next tier. Phase 3 was the big stuff, contingent on future budget. They approved Phases 1 and 2.</p>
+
+<h2>What We Made</h2>
+
+<p>Phase 1 shipped in six weeks: a redesigned notification system with severity tiers and user-configurable thresholds, text labels on all icons (with tooltips for users who knew the system), and a search that accepted partial matches and common user misspellings of SKU formats we'd catalogued during research.</p>
+
+<figure>
+  <div style="background: var(--color-bg-alt); height: 360px; display: flex; align-items: center; justify-content: center; border-radius: 8px; color: var(--color-text-muted);">[ Internal tool redesign — notification system and icon labeling ]</div>
+  <figcaption>Before and after: the notification panel, now tiered by severity with user-configurable alert thresholds.</figcaption>
+</figure>
+
+<p>Phase 2 shipped three months later: a redesigned exception queue with status visibility, a bulk action system that replaced a 12-step manual process, and a dashboard that surfaced the five metrics the ops leads told me they were checking manually every morning in spreadsheets.</p>
+
+<h2>Did It Work?</h2>
+
+<p>After Phase 1: critical alert response time improved by 38% (ops team was actually seeing the alerts again). After Phase 2: the exception queue processing time dropped by 55%. The bulk action system alone saved each ops specialist an estimated 45 minutes per day.</p>
+
+<p>The qualitative feedback was equally strong — the ops team lead told me it was the first time she'd felt like the tool was working for her team instead of against them.</p>
+
+<p>What I'd push harder for next time: getting a commitment to Phase 3 earlier in the process. The architectural issues are still there, and the phased improvements bought goodwill and budget credibility that could have been leveraged sooner.</p>

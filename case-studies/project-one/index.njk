@@ -1,0 +1,57 @@
+---
+layout: layouts/casestudy.njk
+title: Untangling an onboarding flow nobody could finish
+description: How we cut time-to-value by 40% by starting with the research everyone had been avoiding.
+company: Acme Co — Enterprise SaaS
+next_study:
+  title: Designing for trust in a high-stakes medical context
+  url: /case-studies/project-two/
+---
+
+<h2>The Mess</h2>
+
+<p>When I joined this project, the onboarding flow had a 68% drop-off rate. Nobody could agree on why. The product team thought it was a UI problem. Engineering thought it was a performance problem. Sales thought users just weren't reading the emails. Everyone had a theory; nobody had talked to users.</p>
+
+<p>The flow itself had been patched over time — new steps bolted on without removing old ones, error states that pointed users to documentation that no longer existed, and a progress indicator that lied. Users didn't know how long setup would take, what they were setting up, or whether anything they'd done had actually worked.</p>
+
+<blockquote class="pull-quote" role="note">
+  <p>"We didn't have a UI problem. We had an assumptions problem — and the assumptions had been baked in for three years."</p>
+</blockquote>
+
+<h2>Where I Fit In</h2>
+
+<p>This was a three-person product team: one PM, one engineer, me. I owned the research and design end-to-end. The PM owned stakeholder alignment; the engineer owned the build. We worked in two-week cycles with weekly check-ins with the broader product org.</p>
+
+<p>I also did the first round of prototyping in code (React, nothing fancy) because we needed something testable before engineering had bandwidth to build it.</p>
+
+<h2>How I Untangled It</h2>
+
+<p>I started with five user interviews — existing customers who had completed onboarding and five who had not. I recruited through the customer success team, which already had relationships and could get us on calls quickly.</p>
+
+<div class="callout">
+  <p class="callout__label">Key constraint</p>
+  <p>We had two weeks before the PM had to present a direction to leadership. That meant research had to be fast, directional, and defensible — not exhaustive.</p>
+</div>
+
+<p>What came out of the interviews was not what anyone expected. The drop-off wasn't happening at the complicated technical steps. It was happening at the very first screen, where we asked users to invite their team before they'd had a chance to understand what the product did. Users didn't know who to invite. They didn't want to look uninformed in front of colleagues. They left to "figure it out first" and never came back.</p>
+
+<p>I also did a competitive audit of six other B2B onboarding flows and ran a card sort with eight users to understand how they mentally organized the setup process. The pattern was consistent: users wanted to see value before they were asked to commit time or social capital.</p>
+
+<h2>What We Made</h2>
+
+<p>We restructured the flow into three phases: explore (solo, low-stakes), configure (technical setup, skip-able), and invite (only after the user had completed one meaningful action). The progress indicator was replaced with a checklist format that showed optional vs. required steps.</p>
+
+<figure>
+  <div style="background: var(--color-bg-alt); height: 360px; display: flex; align-items: center; justify-content: center; border-radius: 8px; color: var(--color-text-muted);">[ Redesigned onboarding flow screens ]</div>
+  <figcaption>The new three-phase flow. "Invite your team" moved from step 1 to step 3, after the user had completed a meaningful action.</figcaption>
+</figure>
+
+<p>I ran two rounds of usability testing with the coded prototype before handing off to engineering. Six users each round. We caught two major navigation issues in round one that would have caused the same confusion we were trying to fix.</p>
+
+<h2>Did It Work?</h2>
+
+<p>Four weeks after launch, drop-off on the first screen went from 68% to 31%. Time-to-first-team-invite (our proxy for "user understood the product enough to bring in colleagues") dropped by 40%.</p>
+
+<p>What didn't work: we underestimated how many users would skip the configuration step and then be confused later. We added a persistent nudge in the product dashboard to surface it, which helped, but ideally we would have caught this in research.</p>
+
+<p>The honest lesson: we tested the flow but not the long-term mental model. Given more time, I'd have done a longitudinal study — checking in with users a week after onboarding to see what stuck and what didn't.</p>

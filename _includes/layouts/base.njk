@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }} | Katie Anderson</title>
+  <meta name="description" content="{{ description or 'UX designer and researcher.' }}">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <a class="skip-nav" href="#main">Skip to main content</a>
+
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="site-nav__inner">
+      <a class="site-nav__logo" href="/">Katie Anderson</a>
+      <ul class="site-nav__links">
+        <li><a href="/#case-studies">Projects</a></li>
+        <li><a href="/#lab">The Lab</a></li>
+        <li><a href="/#writing">Writing</a></li>
+        <li><a href="/#about">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+    {{ content | safe }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+
+      <div>
+        <p class="footer__label">Find me</p>
+        <ul class="footer__social">
+          <li><a href="https://www.linkedin.com/in/k80anderson/" rel="external" target="_blank">LinkedIn <span class="visually-hidden">(opens in new tab)</span></a></li>
+          <li><a href="https://github.com/krander" rel="external" target="_blank">GitHub <span class="visually-hidden">(opens in new tab)</span></a></li>
+          <li><a href="https://bsky.app/profile/k80anderson.bsky.social" rel="external" target="_blank">Bluesky <span class="visually-hidden">(opens in new tab)</span></a></li>
+        </ul>
+        <p style="margin-top: 1rem;">
+          <a class="footer__a11y-link" href="/accessibility-statement/">Accessibility Statement</a>
+        </p>
+      </div>
+
+      <div></div>
+
+      <nav class="a11y-webring-club" aria-labelledby="a11y-webring-club">
+        <h2 id="a11y-webring-club">a11y-webring.club</h2>
+        <p>This site is a member of the <a rel="external" href="https://a11y-webring.club/">a11y-webring.club</a>.</p>
+        <ul>
+          <li><a rel="external" referrerpolicy="strict-origin" href="https://a11y-webring.club/prev">Previous website</a></li>
+          <li><a rel="external" referrerpolicy="strict-origin" href="https://a11y-webring.club/random">Random website</a></li>
+          <li><a rel="external" referrerpolicy="strict-origin" href="https://a11y-webring.club/next">Next website</a></li>
+        </ul>
+      </nav>
+
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2026 Katie</p>
+    </div>
+  </footer>
+
+</body>
+</html>
