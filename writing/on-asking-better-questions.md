@@ -1,32 +1,46 @@
 ---
 layout: layouts/article.njk
-title: On asking better questions
-date: 2026-03-15
+title: When Better Design Isn't Enough: What I Learned About Influence, Risk, and Picking the Right Battles
+date: 2026-05-29
 description: The research skill nobody talks about isn't synthesis or analysis — it's learning to shut up at the right moment.
 ---
 
-There's a version of user research where you write a carefully structured interview guide, show up prepared, ask your questions, and leave with exactly what you expected to find. It's not useless. It's just not the good stuff.
+## The brief that seemed reasonable
 
-The good stuff happens when you ask a question and then stay quiet long enough that the silence becomes uncomfortable. Most researchers — including me, for years — fill that silence. We rephrase. We offer a hint. We say "or like, maybe something about the onboarding?" and the participant nods, relieved, and gives us back our own assumption dressed up as their insight.
+At the end of a digital check-in flow, patients were being asked to opt into personalized marketing campaigns. The consent form was easy to miss, hard to parse, and patients were noticing. Social media posts described the targeted ads that followed as eerie — the word that kept appearing was eerie. The company asked me, as the designer, to fix it. Make the form clearer, more transparent, easier to understand.
 
-## The question behind the question
+There was one constraint: opt-in rates couldn't take a significant hit.
 
-What I've learned to do instead is treat every answer as a door. The participant says something. Instead of moving to the next item on my guide, I ask: "Can you say more about that?" And then I wait.
+On the surface, this looked like a tractable UX problem. Clearer language. Better hierarchy. A form that respected the user without tanking the metric. What I missed was that patients weren't upset about the form. They were upset about what had happened to them after they'd filled it out — and no amount of cleaner copy was going to change that.
 
-It sounds simple. It's not. It requires actually listening instead of thinking about what you're going to ask next. It requires being willing to follow the conversation somewhere you didn't plan to go, which means trusting that the plan was a scaffold, not a script.
+## What I did... and why it wasn't wrong, exactly
 
-The best research finding I ever surfaced came from a participant saying "well, I don't know, it just felt weird" about a design I was convinced was working. I could have moved on. Instead I said "weird how?" and spent fifteen minutes in territory I hadn't anticipated, which turned out to be the whole point.
+My design recommendations weren't timid. I pushed for a cleaner layout that surfaced the opt-in decision earlier in the flow, instead of burying it at the end when patients were fatigued and just trying to finish. I advocated for plain language that actually described what patients were agreeing to — not legal-safe phrasing dressed up as clarity. I argued against pre-checked boxes and for a design that made opting out feel as natural as opting in.
 
-## What the guide is actually for
+Some of those changes made it through. The form got shorter. The language got marginally clearer. Opt-in rates held, which was the metric everyone was watching.
 
-Interview guides are not scripts. They're a way of proving to yourself that you've thought carefully about what you want to learn — so that when the conversation goes somewhere unexpected, you have enough of a foundation to recognize which unexpected places are worth following.
+By the brief I'd been given, the project was a success. I delivered what was asked, defended my decisions, and moved the form meaningfully closer to something a patient could actually understand. If you'd handed me that outcome on a different project, I'd have called it a win.
 
-A good guide should make you feel prepared enough to be flexible. If you feel like you need to follow it exactly, it's probably too prescriptive, or you're not yet confident enough in the underlying research questions to improvise around them.
+But I kept thinking about the word eerie.
 
-## The part that takes practice
+## The reframe I missed
 
-Sitting with silence is a skill. So is resisting the urge to interpret out loud while someone is still mid-thought. The moment you say "so it sounds like you're saying X" you've given them an out — they can agree with your paraphrase instead of finishing what they were actually trying to say.
+The social media posts should have told me something beyond "the form needs work." Patients weren't complaining that the language was confusing. They were describing a feeling — that something had been done to them without their real awareness. That's a reputational problem, and reputational problems have a way of becoming financial ones.
 
-I still catch myself doing it. The trick is noticing it, apologizing briefly ("sorry, keep going"), and actually letting them keep going.
+I was in a room with fifteen people, including the COO. I was by far the most junior person there. I argued on design grounds — hierarchy, cognitive load, plain language principles. Those arguments weren't wrong, but they weren't the ones that had any chance of shifting the constraint itself.
 
-The research doesn't happen in the guide. It happens in the silences.
+If I'd walked in and said "we have documented evidence that patients feel deceived, and that's a press cycle waiting to happen" — I'd have been speaking a language that actually had weight in that room. Risk. Liability. Revenue. Those were the levers. I knew it on some level, but the gap between knowing something and saying it out loud to a room full of senior stakeholders is wider than it sounds when you're the most junior person at the table.
+
+The brief had a ceiling built into it. I bumped up against it and accepted it. What I should have done was name it out loud — not as a design complaint, but as a business problem that happened to have a design dimension.
+
+## Speak the room's language
+
+The biggest shift I've made since this project isn't a design skill. It's a communication one.
+
+When you're the most junior person in the room, it's tempting to believe your job is to represent design as clearly and compellingly as possible — and then defer to the people with more authority and context. That's not wrong exactly, but it's incomplete. Your job is also to understand what the people in that room are actually afraid of, and connect your work to that.
+
+Senior stakeholders at a company aren't primarily thinking about user experience. They're thinking about risk, revenue, and reputation. Those aren't cynical priorities — they're the ones that keep the lights on. A designer who can translate between "this form is confusing to users" and "this is a liability that could become a news story" is operating at a different level than one who can't.
+
+That translation isn't dishonest. It's not abandoning design principles to speak business language. It's recognizing that the same problem looks different depending on where you're sitting — and that your argument needs to meet people where they are, not where you are.
+
+I didn't know how to do that then. I do now. And the irony is that making the business case for the right design outcome is often the most effective way to actually advocate for users.

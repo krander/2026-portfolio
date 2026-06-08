@@ -1,56 +1,68 @@
 ---
 layout: layouts/casestudy.njk
-title: Designing for trust in a high-stakes medical context
+title: When patients stop logging
 description: A from-scratch redesign of a patient portal that had a 60% abandonment rate.
-company: HealthCo — Patient-facing mobile
+company: AstraZeneca - iOS/Android
 prev_study:
-  title: Untangling an onboarding flow nobody could finish
+  title: The body diagram that locked people out
   url: /case-studies/project-one/
 next_study:
   title: Making a 10-year-old internal tool usable again
   url: /case-studies/project-three/
 ---
 
-<h2>The Mess</h2>
+<h2>Overview (TL;DR)</h2>
 
-<p>The existing patient portal had been built in 2016, updated minimally since, and was functionally unusable on mobile — where 74% of users actually accessed it. Patients were abandoning before viewing their own test results. The support team was fielding 200+ calls a week from people who couldn't figure out how to do basic tasks.</p>
+<p>AMAZE was a disease management platform built to help patients with chronic conditions track their health daily and keep their care teams informed. The core mechanic was a daily health log: a short questionnaire that, when completed, gave clinicians a continuous view of how patients were doing. A pilot study with Massachusetts General Hospital showed completion rates falling steadily over six months. The problem wasn't the product concept. It was that patients had no reason to keep showing up. I joined the team to help scale the platform to new disease states and, alongside that work, helped redesign the log experience to address the drop-off.</p>
 
-<p>The clinical team had opinions about what should change. Legal had opinions. Compliance had opinions. And somewhere in the middle were actual patients — people dealing with real health anxiety — who hadn't been asked anything.</p>
+<h2>Problem</h2>
 
-<h2>Where I Fit In</h2>
+<p>The daily health log was the product's most important feature and its most fragile one. Patients with chronic conditions like heart failure or asthma answered between 5 and 15 questions each day about how they were feeling. Their responses went to their care team. If something looked off, the team was alerted. The whole model depended on patients completing it consistently.</p>
 
-<p>I was the sole designer on a cross-functional team: one PM, two engineers, a clinical informatics specialist, and a compliance lead. I owned research, IA, and all design deliverables. The clinical informatics lead was invaluable — she understood the data model and caught three instances where my proposed designs would have violated clinical communication standards I didn't know existed.</p>
+<p>A pilot study run with Massachusetts General Hospital showed what was actually happening. Of 30 enrolled participants, 16 completed their log daily in weeks 1 to 4. By weeks 21 to 24, that number had dropped to 7. More than half the engaged patients had stopped. UX research pointed to motivation: patients didn't understand why it mattered, and the repetitive format gave them no reason to keep going.</p>
+
+<p>The design hadn't caused this, but it wasn't helping. The existing experience walked patients through questions one at a time, in a fixed order, every day. It was consistent, but it was also relentless. There was no sense of progress, no flexibility, no way in other than the beginning.</p>
+
+<p>This was also the moment the team was preparing to expand from two diseases to four. Without a shared design system, even adding a new condition risked making an already inconsistent product harder to use.</p>
 
 <blockquote class="pull-quote" role="note">
   <p>"You can't design for trust by making things look trustworthy. You design for trust by removing every moment where the system makes patients feel stupid or scared."</p>
 </blockquote>
 
-<h2>How I Untangled It</h2>
+<h2>Process</h2>
 
-<p>I interviewed 12 patients across three user segments: people managing chronic conditions (high-frequency users), people who received a new diagnosis during the study period (high-stakes users), and people who had tried and failed to use the portal at least once (lapsed users). The lapsed user interviews were the most useful — failure states are always more revealing than success states.</p>
+<p>My role split across two parallel workstreams. The first was building a design system for iOS and Android. The second was the health log redesign.</p>
+
+<p>On the design system: when I joined, the asthma and heart failure versions of the app had been built without one. They looked different in ways that were already noticeable, and the team knew that adding more disease states would make it worse. My visual designer and I made an early call to build two separate systems rather than one unified system across platforms. The reasoning was that platform conventions matter in a health context more than in most product categories. Patients managing chronic conditions are often older, less technically confident, and more reliant on familiar interface patterns. Deviating from what iOS or Android users expected felt like the wrong tradeoff.</p>
 
 <div class="callout">
   <p class="callout__label">Research finding</p>
   <p>The most common failure point wasn't a confusing UI — it was jargon. Lab results were displayed with clinical terminology and reference ranges that meant nothing to non-clinicians. Patients didn't know if their numbers were good or bad, and the portal gave them no way to find out without calling the office.</p>
 </div>
 
-<p>I also conducted a heuristic evaluation of the existing portal against Nielsen's 10 usability heuristics and mapped every abandonment point from the analytics data to specific screens. The two highest-abandonment screens were the results summary (too dense, no plain-language explanation) and the appointment booking flow (5 steps, 3 of which were redundant).</p>
+<p>I built the systems quickly. Over roughly two months, I produced more than 100 components across both platforms. There was real pressure from leadership to move fast. COPD and CKD needed to be designed, and the design system was the prerequisite. I don't think speed compromised the quality in ways that caused immediate problems, but it did mean some decisions were made without much deliberation.</p>
 
-<h2>What We Made</h2>
+<p>On the health log: my senior designer proposed the concept we eventually explored — a non-linear approach where patients could see the different question categories on a single screen and choose where to start. The hypothesis was that the fixed, linear format felt coercive, and that giving patients more control might sustain motivation. I was responsible for translating that concept into low-fidelity mockups and building the prototypes for research.</p>
 
-<p>The redesign centered on three principles we derived directly from research: plain language first, progressive disclosure, and never leave a patient with a number and no context.</p>
+<p>Our UX researchers tested two approaches on UserTesting with proxy participants rather than real patients. The first was the existing linear format. The second was the category-selection model. Neither was a clear winner. The linear format was familiar but felt like a grind. The non-linear format gave people agency but introduced confusion about where they were and whether they'd completed everything.</p>
+
+<p>The solution we landed on tried to take what worked from both. From the home screen, patients could tap a single entry point — a "how are you feeling today?" prompt with three response options — and be taken directly into the question flow. Or they could open the full log, select a specific category, answer that question, and be shown the next question rather than returned to the selection screen. The goal was to lower the barrier to starting without losing the structure that made the log clinically useful.</p>
+
+<h2>Solution</h2>
+
+<p>The shipped experience gave patients two ways in: a low-friction entry point from the home screen for those who wanted to complete the log in one go, and a category-first approach for those who preferred to start somewhere specific. Once you answered a question, the app moved you forward rather than dropping you back to a menu. The flow preserved sequence without enforcing it.</p>
 
 <figure>
   <div style="background: var(--color-bg-alt); height: 360px; display: flex; align-items: center; justify-content: center; border-radius: 8px; color: var(--color-text-muted);">[ Patient portal redesign screens ]</div>
   <figcaption>Lab results redesigned with plain-language summaries, visual status indicators, and a contextual explanation panel — no clinical jargon on the primary view.</figcaption>
 </figure>
 
-<p>Lab results now show a plain-language summary ("Your cholesterol is slightly elevated") before the clinical value. The reference range is there for patients who want it, but it's not the first thing they see. Appointment booking went from 5 steps to 2.</p>
+<p>We didn't have completion rate data post-launch. The redesign tested well in UserTesting, and proxy participants found the new entry points less intimidating than the original format. Whether that translated to sustained daily completion is something I can't confirm.</p>
 
-<h2>Did It Work?</h2>
+<p>The design system shipped ahead of the COPD and CKD expansions. Both disease states were added quickly. The team was preparing to expand to diabetes when I left.</p>
 
-<p>Support call volume dropped 47% in the first six weeks post-launch. Portal abandonment dropped from 60% to 22%. Patient satisfaction scores (measured via post-visit survey) increased from 3.1 to 4.4 out of 5.</p>
+<h2>Reflection</h2>
 
-<p>The number I'm most proud of: 91% of patients in our follow-up survey said they felt they understood their lab results after the redesign. That number was 34% before.</p>
+<p>The two-system decision for iOS and Android made sense at the time and I still think the reasoning was sound. But maintaining two separate systems when you wanted to change something took twice the work. I'd think harder about that tradeoff now — not because platform conventions don't matter, but because the maintenance cost compounds faster than you expect.</p>
 
-<p>What I'd do differently: I'd push harder for ongoing access to patient feedback post-launch. We had great launch metrics, but I lost visibility into what was happening six months out. A lightweight feedback mechanism built into the portal itself would have helped.</p>
+<p>The thing I'd most want to revisit is the research. We tested with proxy participants on UserTesting rather than real patients. For most products that's a reasonable compromise. For a health management app where the users are managing chronic conditions, it's a meaningful gap. The people most likely to disengage from a daily log aren't well-represented by proxy panels. We were testing comprehension and usability. We weren't really testing motivation, which was the actual problem.</p>
