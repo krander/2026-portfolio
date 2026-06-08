@@ -1,6 +1,6 @@
 ---
 layout: layouts/article.njk
-title: When Better Design Isn't Enough: What I Learned About Influence, Risk, and Picking the Right Battles
+title: "When Better Design Isn't Enough: What I Learned About Influence, Risk, and Picking the Right Battles"
 date: 2026-05-29
 description: The research skill nobody talks about isn't synthesis or analysis — it's learning to shut up at the right moment.
 ---
