@@ -15,6 +15,7 @@ module.exports = function (eleventyConfig) {
   });
 
   return {
+    pathPrefix: "/2026-portfolio/",
     dir: {
       input: ".",
       includes: "_includes",

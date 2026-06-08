@@ -5,19 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ title }} | Katie Anderson</title>
   <meta name="description" content="{{ description or 'UX designer and researcher.' }}">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="{{ '/css/style.css' | url }}">
 </head>
 <body>
   <a class="skip-nav" href="#main">Skip to main content</a>
 
   <nav class="site-nav" aria-label="Main navigation">
     <div class="site-nav__inner">
-      <a class="site-nav__logo" href="/">Katie Anderson</a>
+      <a class="site-nav__logo" href="{{ '/' | url }}">Katie Anderson</a>
       <ul class="site-nav__links">
-        <li><a href="/#case-studies">Projects</a></li>
-        <li><a href="/#lab">The Lab</a></li>
-        <li><a href="/#writing">Writing</a></li>
-        <li><a href="/#about">About</a></li>
+        <li><a href="{{ '/' | url }}#case-studies">Projects</a></li>
+        <li><a href="{{ '/' | url }}#lab">The Lab</a></li>
+        <li><a href="{{ '/' | url }}#writing">Writing</a></li>
+        <li><a href="{{ '/' | url }}#about">About</a></li>
       </ul>
     </div>
   </nav>
@@ -37,7 +37,7 @@
           <li><a href="https://bsky.app/profile/k80anderson.bsky.social" rel="external" target="_blank">Bluesky <span class="visually-hidden">(opens in new tab)</span></a></li>
         </ul>
         <p style="margin-top: 1rem;">
-          <a class="footer__a11y-link" href="/accessibility-statement/">Accessibility Statement</a>
+          <a class="footer__a11y-link" href="{{ '/accessibility-statement/' | url }}">Accessibility Statement</a>
         </p>
       </div>
 

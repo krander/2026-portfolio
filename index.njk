@@ -17,7 +17,7 @@ description: Katie Anderson — UX designer and researcher.
     </div>
 
     {# First case study card lives in the hero #}
-    <a class="card hero__card" href="/case-studies/project-one/">
+    <a class="card hero__card" href="{{ '/case-studies/project-one/' | url }}">
       <div class="card__image--placeholder" aria-hidden="true">[ Project thumbnail ]</div>
       <div class="card__body">
         <p class="card__context">Acme Co &mdash; Enterprise SaaS</p>
@@ -38,7 +38,7 @@ description: Katie Anderson — UX designer and researcher.
     </div>
     <div class="case-studies__grid">
 
-      <a class="card" href="/case-studies/project-two/">
+      <a class="card" href="{{ '/case-studies/project-two/' | url }}">
         <div class="card__image--placeholder" aria-hidden="true">[ Project thumbnail ]</div>
         <div class="card__body">
           <p class="card__context">HealthCo &mdash; Patient-facing mobile</p>
@@ -47,7 +47,7 @@ description: Katie Anderson — UX designer and researcher.
         </div>
       </a>
 
-      <a class="card" href="/case-studies/project-three/">
+      <a class="card" href="{{ '/case-studies/project-three/' | url }}">
         <div class="card__image--placeholder" aria-hidden="true">[ Project thumbnail ]</div>
         <div class="card__body">
           <p class="card__context">Internal tools &mdash; Ops team</p>
@@ -138,19 +138,19 @@ description: Katie Anderson — UX designer and researcher.
 
       <div class="about__photos">
         <figure class="polaroid">
-          <img src="/img/placeholder-photo-1.jpg" alt="[ Add a photo of yourself, your pets, or somewhere you've hiked ]">
+          <img src="{{ '/img/placeholder-photo-1.jpg' | url }}" alt="[ Add a photo of yourself, your pets, or somewhere you've hiked ]">
           <figcaption class="polaroid__caption">[ Caption goes here ]</figcaption>
         </figure>
         <figure class="polaroid">
-          <img src="/img/placeholder-photo-2.jpg" alt="[ Add a candid photo ]">
+          <img src="{{ '/img/placeholder-photo-2.jpg' | url }}" alt="[ Add a candid photo ]">
           <figcaption class="polaroid__caption">[ Caption goes here ]</figcaption>
         </figure>
         <figure class="polaroid">
-          <img src="/img/placeholder-photo-3.jpg" alt="[ Add a photo ]">
+          <img src="{{ '/img/placeholder-photo-3.jpg' | url }}" alt="[ Add a photo ]">
           <figcaption class="polaroid__caption">[ Caption goes here ]</figcaption>
         </figure>
         <figure class="polaroid">
-          <img src="/img/placeholder-photo-4.jpg" alt="[ Add a photo ]">
+          <img src="{{ '/img/placeholder-photo-4.jpg' | url }}" alt="[ Add a photo ]">
           <figcaption class="polaroid__caption">[ Caption goes here ]</figcaption>
         </figure>
       </div>
