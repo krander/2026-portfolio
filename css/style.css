@@ -501,12 +501,32 @@ a:hover {
 .footer__social {
   list-style: none;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: var(--space-xs);
+  margin-top: var(--space-xs);
 }
 
-.footer__social li a {
-  font-size: 0.95rem;
+.footer__social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  text-decoration: none;
+  border-radius: var(--radius);
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.footer__social-link svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+.footer__social-link:hover,
+.footer__social-link:focus-visible {
+  color: var(--color-accent);
+  background-color: rgba(255, 255, 255, 0.08);
 }
 
 .footer__label {
@@ -553,6 +573,13 @@ a:hover {
   flex-direction: column;
   gap: 4px;
   margin-top: 0.4rem;
+}
+
+.a11y-webring-club__icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  margin-right: 0.25em;
 }
 
 /* ============================================================
