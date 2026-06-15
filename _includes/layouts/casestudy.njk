@@ -21,7 +21,6 @@ layout: layouts/base.njk
         <a href="{{ prev_study.url | url }}">&larr; {{ prev_study.title }}</a>
       {% endif %}
     </div>
-    <a href="{{ '/' | url }}#case-studies">Back to work</a>
     <div>
       {% if next_study %}
         <a href="{{ next_study.url | url }}">{{ next_study.title }} &rarr;</a>

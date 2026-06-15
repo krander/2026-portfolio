@@ -1,0 +1,103 @@
+---
+layout: layouts/casestudy.njk
+title: The body diagram that locked people out
+description: A legacy questionnaire had never worked for keyboard or screen reader users. Making it accessible meant rethinking what "equivalent experience" actually means.
+company: Phreesia - B2B2C
+next_study:
+  title: When patients stop logging
+  url: /case-studies/amaze-app/
+---
+
+<h2>Overview</h2>
+
+<p>During my time at Phreesia, I worked on their digital patient check-in product, which included a pain scale questionnaire where patients could indicate where they were experiencing pain on a diagram of the body. Data showed that 7% of patients were abandoning the check-in process at this section (the highest drop-off rate in the entire flow). While investigating the cause, I found the body diagram was completely unusable for people who rely on a keyboard or screen reader to access the web because the body diagram had no tab stops or text alternatives. The fix required navigating a business constraint that complicated the most straightforward solution, and researching a design pattern I hadn't used before. The result was a 3.4% reduction in drop-off. Meaningful, but not yet addressing the entire 7% abandonment. The body diagram was one barrier among several we identified in that section.</p>
+
+<h2>Problem</h2>
+
+<p>The organization identified that 7% of patients were abandoning their check-in at the pain scale section. Because that number came from an antiquated platform, we had limited data and weren't able to see exactly which page of the five-page section was driving that drop-off. A prior usability test I had conducted with UserZoom participants of a standard check-in flow hadn't surfaced any obvious barriers.</p>
+
+<p>When I spent some time investigating this section more closely, the problem was obvious. The page required patients to click using their mouse or tap with their finger on the image of a body diagram where they were experiencing pain. However, this interaction was a complete barrier for any patient who (A) can't use a mouse or finger, and instead navigates using a keyboard or other type of assistive technology, or (B) uses a screen reader to navigate the page. The image had no meaningful text alternative for screen readers to announce what it was displaying and no tab stops for keyboard focus.</p>
+
+<blockquote class="pull-quote" role="note">
+  <p>"For any patient navigating with a keyboard or assistive technology, this was a complete barrier."</p>
+</blockquote>
+
+<p>This hadn't been caught before because accessibility wasn't on the organization's radar. Getting a fix prioritized required my product manager and I to escalate to leadership. I wasn't sure how that conversation would go.</p>
+
+<figure>
+  <div style="background: var(--color-bg-alt); height: 360px; display: flex; align-items: center; justify-content: center; border-radius: 8px; color: var(--color-text-muted);">[ Original body diagram ]</div>
+  <figcaption>The original body diagram interaction — mouse or touch only, with no keyboard access or screen reader support.</figcaption>
+</figure>
+
+<h2>Process</h2>
+
+<p>While my product manager handled making the business case with leadership, with support from our legal team who were pushing for a quick fix, I started exploring what a solution might look like. My instinct was to change as little as possible on the front end: make the interaction keyboard-accessible, add tab stops to the existing image, write patient-friendly text alternatives for each body region, and handle focus indication within the existing visual design. A more significant alternative, like replacing the diagram with progressive disclosure dropdown lists, felt like too large of a departure from the initial experience.</p>
+
+<p>It was around this time that we received approval from leadership to prioritize a fix, with one constraint: the ability for patients to select a custom, specific point on the diagram needed to stay. They believed that ability was clinically valuable. After discussing implementation options with my lead engineer, he informed me that free-form point selection on an image is genuinely difficult to make keyboard-accessible. We wouldn't be able to allow both precise selection via mouse/tap and a keyboard/screen reader friendly experience in one unified interaction. This is what led me toward an accessibility mode toggle.</p>
+
+<div class="callout">
+  <p class="callout__label">Business constraint</p>
+  <p>The business needed custom point selection to stay. That ruled out the simplest accessible solution.</p>
+</div>
+
+<p>At first, I wasn't comfortable with this. A separate mode felt like the kind of thing that quietly breaks with no one noticing or gets deprioritized in future iterations. But I also knew I couldn't make that call based on my own assumptions. I needed to hear from people who actually use a keyboard or screen reader. UserZoom's participant pool made this nearly impossible. The incidence rate for finding keyboard-only and screen reader users was under 1%. I managed one interview, but that wasn't enough to go on.</p>
+
+<blockquote class="pull-quote" role="note">
+  <p>"The accessible version couldn't do everything the original could. That was the constraint we couldn't design our way out of."</p>
+</blockquote>
+
+<p>So I took to Reddit: r/accessibility, r/blind, and r/webaccess. It felt scrappy, but the alternative was proceeding with barely any validation at all. In my post I disclosed that I was a designer working on a healthcare product and asked how people felt about accessibility mode toggles. The consistent message was that a toggle was acceptable: it was a interaction difference, not a wholesale separate experience. That reframe helped, even if our specific constraint meant the line wasn't quite that clean.</p>
+
+<div class="callout">
+  <p class="callout__label">Key insight</p>
+  <p>Respondents were comfortable with accessibility mode toggles as long as they were easy to find.</p>
+</div>
+
+<p>From there, the decisions became more granular. Where should the toggle live? Proximity felt important since the toggle would only affect the body diagram at this point. Placing it at the start of the entire check-in process felt disconnected. Ultimately, I put it below the section heading, but above the body diagram interaction so it would be easier to discover. What should the label say? The goal was to set clear expectations. I wrote some initial options and consulted with a copywriter from another team to refine them. I made the final call on the label.</p>
+
+<figure>
+  <div style="background: var(--color-bg-alt); height: 360px; display: flex; align-items: center; justify-content: center; border-radius: 8px; color: var(--color-text-muted);">[ Accessibility toggle ]</div>
+  <figcaption>The accessibility mode toggle as it appears on page load — positioned above the body diagram to aid discoverability.</figcaption>
+</figure>
+
+<p>I brought in one of the company's clinical information specialists to help decide on the correct tab order and number of focusable regions on the body diagram. We started with over 100 potential regions. They helped narrow this down to 40 as well as come up with patient-friendly text alternatives for each. Notably, this team raised something I hadn't considered: whether the patient-facing label and the label recorded in the electronic health record could differ? For example, a patient hears " left wrist" but the electronic health record receives "left carpal region." My architect confirmed this was possible. The custom point offered more spatial precision: a patient could indicate exactly where on their wrist they felt pain. The accessible version traded that precision for something clinically useful in a different way: a labelled region the system could record automatically, removing a step for the provider.</p>
+
+<div class="callout">
+  <p class="callout__label">Tradeoff</p>
+  <p>The custom point offered more spatial precision. The accessible version traded that for a labelled region the system could record automatically.</p>
+</div>
+
+<p>For the focus indicator, the browser's default rectangle alone wasn't enough to communicate which body region was active, especially in areas where body regions were awkwardly shaped. To help, I created 40 custom vector images, one for each focusable region, that filled with color on focus, making it visually clear which area was selected. The browser's default focus indicator remained alongside the svg fill rather than be replaced by it. </p>
+
+<figure>
+  <div style="background: var(--color-bg-alt); height: 360px; display: flex; align-items: center; justify-content: center; border-radius: 8px; color: var(--color-text-muted);">[ Before/after focus indicator ]</div>
+  <figcaption>Left: the browser's default focus rectangle on its own. Right: the same region with the custom SVG colour fill added to clarify which body area is active.</figcaption>
+</figure>
+
+<p>At this time, Figma's prototyping abilities were not accessible, so I had to wait until my engineering team had a workable proof of concept to test with real users. Getting there required making a case to my manager to use UserZoom's white glove service to recruit keyboard-only users. The sessions confirmed that the tab order was predictable and knowing which region had focus was clear. Two things weren't working.</p>
+
+<p>First, patients didn't immediately notice the accessibility toggle when they arrived on the page. Leadership was concerned that sighted mouse users might accidentally enable it. I pushed back — at this point in the questionnaire, most patients are focused on finishing, not exploring unfamiliar controls. And most people know whether they need accessibility features. That's an assumption, but I still think it was a reasonable one. Second, once the toggle was enabled, it wasn't obvious what had changed on the page. Without a clear signal, patients had to figure out on their own that the body diagram could now be navigated with their keyboard.</p>
+
+<p>Given where we were in the timeline, I addressed both with light-touch fixes: repositioning the toggle to the left to follow a natural scanning pattern, and adding a toast message on activation to let patients know the body diagram could now be navigated using their keyboard. I would have liked more time to test whether those changes actually worked, but that testing didn't happen before release.</p>
+
+<figure>
+  <div style="background: var(--color-bg-alt); height: 360px; display: flex; align-items: center; justify-content: center; border-radius: 8px; color: var(--color-text-muted);">[ Toast notification ]</div>
+  <figcaption>The toggle in its enabled state, with the toast message confirming the body diagram can now be navigated using a keyboard.</figcaption>
+</figure>
+
+<h2>Solution</h2>
+
+<p>The shipped solution added an accessibility mode toggle to the body diagram page within the pain scale section. When enabled, patients could navigate approximately 40 labelled body regions using their keyboard, with a visible focus indicator and screen-reader-friendly text for each region. The ability to select a custom point remained available for patients not using accessibility mode.</p>
+
+<figure>
+  <div style="background: var(--color-bg-alt); height: 360px; display: flex; align-items: center; justify-content: center; border-radius: 8px; color: var(--color-text-muted);">[ Redesigned body diagram with accessibility mode enabled ]</div>
+  <figcaption>The body diagram with accessibility mode enabled. The SVG overlay highlights the active region on focus; screen readers announce the patient-friendly label for each.</figcaption>
+</figure>
+
+<p>Once implemented, drop-off during this section fell by 3.4%. That's a meaningful improvement, but it leaves the remaining 4% unaccounted for. The body diagram was one friction point in a multi-question section. I identified several other opportunities worth addressing: the repetitive flow for adding multiple pain points, the ambiguity of some pain-type labels, and an unclear severity scale interaction.</p>
+
+<p>We also saw average time spent on this section increase by about 20 seconds. Leadership flagged it, which we'd anticipated. Navigating through 40 regions takes longer than tapping a single point on an image and they accepted the explanation. That was the cost of doing it right.</p>
+
+<h2>Reflection</h2>
+
+<p>The decision I'd love to revisit is the choice to skip usability testing with screen reader users. The choice was made due to limited research credits for additional white glove recruitment. I was the only person who tested the screen reader experience. Because I only had a Macbook, I was only able to test using VoiceOver. I have no idea how the experience holds up with other popular screen readers like NVDA or JAWS. Knowing screen reader behavior varies significantly across browser and assistive technology combinations, I knew those nuances weren't something I would catch myself. So without that testing, we were essentially leaving it to real patients to find the gaps. If I had another chance, I'd push harder for screen reader testing as a condition of release, not a nice-to-have. The credit cost was real, but the risk was spending significant time and effort on an accessibility fix that didn't actually work for the people it was meant to serve.</p>
