@@ -4,8 +4,8 @@ title: The body diagram that locked people out
 description: A legacy questionnaire had never worked for keyboard or screen reader users. Making it accessible meant rethinking what "equivalent experience" actually means.
 company: Phreesia - B2B2C
 next_study:
-  title: When patients stop logging
-  url: /case-studies/amaze-app/
+  title: Transparency at a cost
+  url: /case-studies/marketing-opt-in-form/
 ---
 
 <h2>Overview</h2>
@@ -13,6 +13,11 @@ next_study:
 <p>During my time at Phreesia, I worked on their digital patient check-in product, which included a pain scale questionnaire where patients could indicate where they were experiencing pain on a diagram of the body. Data showed that 7% of patients were abandoning the check-in process at this section (the highest drop-off rate in the entire flow). While investigating the cause, I found the body diagram was completely unusable for people who rely on a keyboard or screen reader to access the web because the body diagram had no tab stops or text alternatives. The fix required navigating a business constraint that complicated the most straightforward solution, and researching a design pattern I hadn't used before. The result was a 3.4% reduction in drop-off. Meaningful, but not yet addressing the entire 7% abandonment. The body diagram was one barrier among several we identified in that section.</p>
 
 <h2>Problem</h2>
+
+<figure>
+  <div style="background: var(--color-bg-alt); height: 360px; display: flex; align-items: center; justify-content: center; border-radius: 8px; color: var(--color-text-muted);">[ Original body diagram ]</div>
+  <figcaption>The original body diagram interaction — mouse or touch only, with no keyboard access or screen reader support.</figcaption>
+</figure>
 
 <p>The organization identified that 7% of patients were abandoning their check-in at the pain scale section. Because that number came from an antiquated platform, we had limited data and weren't able to see exactly which page of the five-page section was driving that drop-off. A prior usability test I had conducted with UserZoom participants of a standard check-in flow hadn't surfaced any obvious barriers.</p>
 
@@ -23,11 +28,6 @@ next_study:
 </blockquote>
 
 <p>This hadn't been caught before because accessibility wasn't on the organization's radar. Getting a fix prioritized required my product manager and I to escalate to leadership. I wasn't sure how that conversation would go.</p>
-
-<figure>
-  <div style="background: var(--color-bg-alt); height: 360px; display: flex; align-items: center; justify-content: center; border-radius: 8px; color: var(--color-text-muted);">[ Original body diagram ]</div>
-  <figcaption>The original body diagram interaction — mouse or touch only, with no keyboard access or screen reader support.</figcaption>
-</figure>
 
 <h2>Process</h2>
 
@@ -47,11 +47,6 @@ next_study:
 </blockquote>
 
 <p>So I took to Reddit: r/accessibility, r/blind, and r/webaccess. It felt scrappy, but the alternative was proceeding with barely any validation at all. In my post I disclosed that I was a designer working on a healthcare product and asked how people felt about accessibility mode toggles. The consistent message was that a toggle was acceptable: it was a interaction difference, not a wholesale separate experience. That reframe helped, even if our specific constraint meant the line wasn't quite that clean.</p>
-
-<div class="callout">
-  <p class="callout__label">Key insight</p>
-  <p>Respondents were comfortable with accessibility mode toggles as long as they were easy to find.</p>
-</div>
 
 <p>From there, the decisions became more granular. Where should the toggle live? Proximity felt important since the toggle would only affect the body diagram at this point. Placing it at the start of the entire check-in process felt disconnected. Ultimately, I put it below the section heading, but above the body diagram interaction so it would be easier to discover. What should the label say? The goal was to set clear expectations. I wrote some initial options and consulted with a copywriter from another team to refine them. I made the final call on the label.</p>
 
@@ -89,14 +84,14 @@ next_study:
 
 <p>The shipped solution added an accessibility mode toggle to the body diagram page within the pain scale section. When enabled, patients could navigate approximately 40 labelled body regions using their keyboard, with a visible focus indicator and screen-reader-friendly text for each region. The ability to select a custom point remained available for patients not using accessibility mode.</p>
 
+<p>Once implemented, drop-off during this section fell by 3.4%. That's a meaningful improvement, but it leaves the remaining 4% unaccounted for. The body diagram was one friction point in a multi-question section. I identified several other opportunities worth addressing: the repetitive flow for adding multiple pain points, the ambiguity of some pain-type labels, and an unclear severity scale interaction.</p>
+
+<p>We also saw average time spent on this section increase by about 20 seconds. Leadership flagged it, which we'd anticipated. Navigating through 40 regions takes longer than tapping a single point on an image and they accepted the explanation. That was the cost of doing it right.</p>
+
 <figure>
   <div style="background: var(--color-bg-alt); height: 360px; display: flex; align-items: center; justify-content: center; border-radius: 8px; color: var(--color-text-muted);">[ Redesigned body diagram with accessibility mode enabled ]</div>
   <figcaption>The body diagram with accessibility mode enabled. The SVG overlay highlights the active region on focus; screen readers announce the patient-friendly label for each.</figcaption>
 </figure>
-
-<p>Once implemented, drop-off during this section fell by 3.4%. That's a meaningful improvement, but it leaves the remaining 4% unaccounted for. The body diagram was one friction point in a multi-question section. I identified several other opportunities worth addressing: the repetitive flow for adding multiple pain points, the ambiguity of some pain-type labels, and an unclear severity scale interaction.</p>
-
-<p>We also saw average time spent on this section increase by about 20 seconds. Leadership flagged it, which we'd anticipated. Navigating through 40 regions takes longer than tapping a single point on an image and they accepted the explanation. That was the cost of doing it right.</p>
 
 <h2>Reflection</h2>
 

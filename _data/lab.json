@@ -1,17 +1,17 @@
 [
   {
-    "title": "Rebrand exploration",
-    "description": "A logo system I designed for a fictional outdoor gear brand, just to see where it went.",
+    "title": "RunRelief",
+    "description": "An iOS app solving the most urgent problem in running: finding a bathroom before it's too late.",
     "image": "",
-    "image_alt": "A set of logo variations for a fictional outdoor gear brand called Summit, using earthy tones and clean geometric shapes.",
-    "url": "#"
+    "image_alt": "RunRelief iOS app interface showing a map with nearby bathroom locations for runners.",
+    "url": "https://runrelief.app/"
   },
   {
-    "title": "Type specimen poster",
-    "description": "Playing with editorial layout and variable fonts at 2am.",
+    "title": "TE Academy",
+    "description": "Course for absolute beginners learning Teenage Engineering's OP-1 synthesizer.",
     "image": "",
-    "image_alt": "A type specimen poster showcasing a variable serif font, with large display text and layered color blocks.",
-    "url": "#"
+    "image_alt": "",
+    "url": "https://teacademy.co/"
   },
   {
     "title": "Dashboard UI concept",
@@ -19,12 +19,5 @@
     "image": "",
     "image_alt": "A UI concept for a data dashboard showing activity metrics, with a dark background and warm accent colors.",
     "url": "#"
-  },
-  {
-    "title": "RunRelief",
-    "description": "An iOS app solving the most urgent problem in running — finding a bathroom before it's too late.",
-    "image": "",
-    "image_alt": "RunRelief iOS app interface showing a map with nearby bathroom locations for runners.",
-    "url": "https://runrelief.app/"
   }
 ]
