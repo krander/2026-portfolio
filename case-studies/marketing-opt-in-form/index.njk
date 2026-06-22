@@ -1,68 +1,64 @@
 ---
 layout: layouts/casestudy.njk
-title: When patients stop logging
-description: A from-scratch redesign of a patient portal that had a 60% abandonment rate.
-company: AstraZeneca - iOS/Android
+title: Transparency at a cost
+description: A consent form redesign for a patient-facing marketing opt-in — and what happens when improving the user experience conflicts directly with business incentives.
+company: Phreesia - Healthcare SaaS
 prev_study:
   title: The body diagram that locked people out
   url: /case-studies/body-diagram/
 next_study:
-  title: Making a 10-year-old internal tool usable again
+  title: We did the research. A deadline we didn't know about did the rest.
   url: /case-studies/internal-accessibility-site/
 ---
 
 <h2>Overview (TL;DR)</h2>
 
-<p>AMAZE was a disease management platform built to help patients with chronic conditions track their health daily and keep their care teams informed. The core mechanic was a daily health log: a short questionnaire that, when completed, gave clinicians a continuous view of how patients were doing. A pilot study with Massachusetts General Hospital showed completion rates falling steadily over six months. The problem wasn't the product concept. It was that patients had no reason to keep showing up. I joined the team to help scale the platform to new disease states and, alongside that work, helped redesign the log experience to address the drop-off.</p>
+<p>One of Phreesia's core products requires patients to check in for their medical appointments online before they're seen. They move through a lengthy intake form covering their health history, insurance, and reason for visit. At the very end, they're asked to opt into personalized marketing campaigns. Some were doing it without realizing it, and the targeted ads that followed felt eerie enough that people started posting about it on social media. The company asked me to represent the UX design perspective on a large cross-functional team brought together to fix the consent form. There was one constraint: opt-in rates couldn't drop. Optimizing for conversion while making the form genuinely transparent are goals that pull against each other. What shipped was a shorter form with slightly clearer language, not the structural changes that could have made a real difference. I ended the project knowing how I'd make the case differently next time.</p>
 
 <h2>Problem</h2>
 
-<p>The daily health log was the product's most important feature and its most fragile one. Patients with chronic conditions like heart failure or asthma answered between 5 and 15 questions each day about how they were feeling. Their responses went to their care team. If something looked off, the team was alerted. The whole model depended on patients completing it consistently.</p>
+<p>The marketing opt-in form sat at the end of a lengthy digital check-in flow, at the point where patient fatigue is highest. It was written in dense legal language, required multiple scrolls to reach the checkbox, and was visually indistinguishable from the clinical consent forms that preceded it. Patients checked the opt-in box without reading the page, causing confusion about why advertisements felt so personal and intrusive. The company wanted to address this, but executives made clear that any change risking lower opt-in rates was off the table. Each opt-in translated directly to advertising revenue.</p>
 
-<p>A pilot study run with Massachusetts General Hospital showed what was actually happening. Of 30 enrolled participants, 16 completed their log daily in weeks 1 to 4. By weeks 21 to 24, that number had dropped to 7. More than half the engaged patients had stopped. UX research pointed to motivation: patients didn't understand why it mattered, and the repetitive format gave them no reason to keep going.</p>
-
-<p>The design hadn't caused this, but it wasn't helping. The existing experience walked patients through questions one at a time, in a fixed order, every day. It was consistent, but it was also relentless. There was no sense of progress, no flexibility, no way in other than the beginning.</p>
-
-<p>This was also the moment the team was preparing to expand from two diseases to four. Without a shared design system, even adding a new condition risked making an already inconsistent product harder to use.</p>
-
-<blockquote class="pull-quote" role="note">
-  <p>"You can't design for trust by making things look trustworthy. You design for trust by removing every moment where the system makes patients feel stupid or scared."</p>
-</blockquote>
+<figure>
+  <div style="background: var(--color-bg-alt); height: 360px; display: flex; align-items: center; justify-content: center; border-radius: 8px; color: var(--color-text-muted);">[ Fatigue journey diagram ]</div>
+  <figcaption>Where the marketing opt-in form lived in the check-in flow, after a longest stretch of clinical questions.</figcaption>
+</figure>
 
 <h2>Process</h2>
 
-<p>My role split across two parallel workstreams. The first was building a design system for iOS and Android. The second was the health log redesign.</p>
+<p>Before proposing any solutions, I ran comprehension testing to establish a baseline. Participants were asked to read the marketing opt-in form and explain in their own words what they were agreeing to. Most couldn't, even when they tried to read the legal text carefully. That finding confirmed the problem was real and gave the project a clear direction.</p>
 
-<p>On the design system: when I joined, the asthma and heart failure versions of the app had been built without one. They looked different in ways that were already noticeable, and the team knew that adding more disease states would make it worse. My visual designer and I made an early call to build two separate systems rather than one unified system across platforms. The reasoning was that platform conventions matter in a health context more than in most product categories. Patients managing chronic conditions are often older, less technically confident, and more reliant on familiar interface patterns. Deviating from what iOS or Android users expected felt like the wrong tradeoff.</p>
+<p>From there I ran a heat map study where participants clicked or tapped words and phrases they found confusing. It generated a clear picture of which language was causing the most friction, and gave me concrete targets for revision.</p>
 
-<div class="callout">
-  <p class="callout__label">Research finding</p>
-  <p>The most common failure point wasn't a confusing UI — it was jargon. Lab results were displayed with clinical terminology and reference ranges that meant nothing to non-clinicians. Patients didn't know if their numbers were good or bad, and the portal gave them no way to find out without calling the office.</p>
-</div>
+<p>The harder part was testing solutions. I ran a fatigue simulation, a check-in flow long enough to mimic what patients actually experience before reaching the opt-in form, and tested several approaches within it: breaking up the dense paragraphs, increasing font size, and adding plain-language callouts that summarized each section in clearer terms. None performed with statistical significance over the others. That became a recurring challenge. Leadership was already skeptical of the UserZoom platform itself, questioning whether compensated participants engaged thoughtfully enough to produce credible data. Combined with a preference for statistically significant findings, a standard that qualitative UX research isn't designed to meet, meant the findings were easy to set aside.</p>
 
-<p>I built the systems quickly. Over roughly two months, I produced more than 100 components across both platforms. There was real pressure from leadership to move fast. COPD and CKD needed to be designed, and the design system was the prerequisite. I don't think speed compromised the quality in ways that caused immediate problems, but it did mean some decisions were made without much deliberation.</p>
+<figure>
+  <div style="background: var(--color-bg-alt); height: 360px; display: flex; align-items: center; justify-content: center; border-radius: 8px; color: var(--color-text-muted);">[ Form ideation ]</div>
+  <figcaption>Various concepts I proposed including.</figcaption>
+</figure>
 
-<p>On the health log: my senior designer proposed the concept we eventually explored — a non-linear approach where patients could see the different question categories on a single screen and choose where to start. The hypothesis was that the fixed, linear format felt coercive, and that giving patients more control might sustain motivation. I was responsible for translating that concept into low-fidelity mockups and building the prototypes for research.</p>
+<p>One study tested a concept the COO had brought to the table: interactive popovers, borrowed from Google's privacy pages, that would let patients select a term and read a plain-language explanation. I ran the study because the idea deserved a full investigation, even though I suspected the added interaction wouldn't move the needle. It didn't.</p>
 
-<p>Our UX researchers tested two approaches on UserTesting with proxy participants rather than real patients. The first was the existing linear format. The second was the category-selection model. Neither was a clear winner. The linear format was familiar but felt like a grind. The non-linear format gave people agency but introduced confusion about where they were and whether they'd completed everything.</p>
+<p>The data scientists on the team were running A/B tests in parallel throughout, testing changes as granular as punctuation and capitalization. I pushed back on this approach. That level of detail made sense: the team wanted to be able to attribute any movement in opt-in rates to a specific change, but delayed our fix.</p>
 
-<p>The solution we landed on tried to take what worked from both. From the home screen, patients could tap a single entry point — a "how are you feeling today?" prompt with three response options — and be taken directly into the question flow. Or they could open the full log, select a specific category, answer that question, and be shown the next question rather than returned to the selection screen. The goal was to lower the barrier to starting without losing the structure that made the log clinically useful.</p>
+<p>By the time changes were ready to evaluate, the business was already satisfied with the A/B test results coming out of beta, so I didn't run post-change comprehension testing. The project had been long, my findings had repeatedly failed to move the room, and I was burning out. It's the part of the process I'd most want to close differently, because we never found out whether patients actually understood the form any better than they had before.</p>
 
 <h2>Solution</h2>
 
-<p>The shipped experience gave patients two ways in: a low-friction entry point from the home screen for those who wanted to complete the log in one go, and a category-first approach for those who preferred to start somewhere specific. Once you answered a question, the app moved you forward rather than dropping you back to a menu. The flow preserved sequence without enforcing it.</p>
+<p>What shipped was a condensed version of the marketing opt-in form. It required fewer scrolls to reach the checkbox and used language the team believed to be clearer than the original. Opt-in rates remained stable. From the company's perspective, the project was a success.</p>
 
-<figure>
-  <div style="background: var(--color-bg-alt); height: 360px; display: flex; align-items: center; justify-content: center; border-radius: 8px; color: var(--color-text-muted);">[ Patient portal redesign screens ]</div>
-  <figcaption>Lab results redesigned with plain-language summaries, visual status indicators, and a contextual explanation panel — no clinical jargon on the primary view.</figcaption>
-</figure>
+<blockquote class="pull-quote" role="note">
+  <p>"Patients were still being asked to make a consequential decision at the most fatigued point in a long form, in language designed to protect the business rather than inform the user."</p>
+</blockquote>
 
-<p>We didn't have completion rate data post-launch. The redesign tested well in UserTesting, and proxy participants found the new entry points less intimidating than the original format. Whether that translated to sustained daily completion is something I can't confirm.</p>
-
-<p>The design system shipped ahead of the COPD and CKD expansions. Both disease states were added quickly. The team was preparing to expand to diabetes when I left.</p>
+<p>From the patient's perspective, I'm less sure. The changes may have reduced some friction but didn't address the root problem. Patients were still being asked to make a consequential decision at the most fatigued point in a long form, in language designed to protect the business rather than inform the user.</p>
 
 <h2>Reflection</h2>
 
-<p>The two-system decision for iOS and Android made sense at the time and I still think the reasoning was sound. But maintaining two separate systems when you wanted to change something took twice the work. I'd think harder about that tradeoff now — not because platform conventions don't matter, but because the maintenance cost compounds faster than you expect.</p>
+<p>I took this project on as the most senior-level designer on my team, but I was by far the most junior person on this task force. If I could go back, I would build alliances earlier. Lone advocacy in a room that senior rarely moves anything. One person from Legal worried about liability, or a product leader with patient trust on their roadmap, could have shifted the dynamic so that I wasn't the only one advocating for the user.</p>
 
-<p>The thing I'd most want to revisit is the research. We tested with proxy participants on UserTesting rather than real patients. For most products that's a reasonable compromise. For a health management app where the users are managing chronic conditions, it's a meaningful gap. The people most likely to disengage from a daily log aren't well-represented by proxy panels. We were testing comprehension and usability. We weren't really testing motivation, which was the actual problem.</p>
+<p>I also should have recognized the tension of the project sooner. The changes most likely to help patients understand what they were agreeing to were also the most likely to reduce opt-ins. The solution was always going to be how much change the business could afford to make without losing revenue.</p>
+
+<p>The argument that might have landed wasn't a design argument. The social media complaints were already a reputational risk. Another cycle of them would have been a revenue risk too. I didn't make that case, and I should have.</p>
+
+<p>This project taught me that design advocacy without business framing is just opinion. I came in with the right instincts about what patients needed. What I didn't have yet was the fluency to make that case in a room where revenue was the primary language.</p>
